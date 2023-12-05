@@ -8,10 +8,9 @@ import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
 @Entity
-
+@Table(name = "request_id")
 public class RequestOrder extends CategoryOrder{
 @Column(name = "code")
 private  String code;
@@ -36,8 +35,8 @@ private Address address =new Address();
 private Address fromAddress=new Address();
 
 public void addItem(Item item){
-    item.add(item);
-    item.setRequestOrdeer(this);
+    items.add(item);
+    item.setRequestOrder(this);
 }
 
 
